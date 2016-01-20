@@ -1,0 +1,106 @@
+@font-face {font-family: NanumGothic; src:url('./resources/NanumGothic.woff') format('woff');}
+@font-face {font-family: NanumBarunGothic; src:url('./resources/NanumBarunGothic.woff') format('woff');}
+
+
+body{
+font-family: NanumBarunGothic;
+font-size: 85%;
+background-color: #C2DFFF;
+}
+
+span{
+color: #282828;
+text-decoration: none;
+}
+
+a:link{
+color: #282828;
+text-decoration: none;
+}
+a:active{
+color: #CCCCCC;
+text-decoration: none;
+}
+a:visited{
+color: #777777;
+text-decoration: none;
+}
+a:hover{
+color: #AAAAAA;
+text-decoration: none;
+}
+
+input{
+font-family: Tahoma;
+}
+
+input[type="number"]{width: 60px;}
+
+input.generalBtns{
+background-color: #FFFFFF;
+cursor: pointer;
+padding: 3px 20px;
+font-family: NanumGothic;
+border: 1px solid #0000FF;
+border-radius: 3px;
+}
+
+abbr{cursor: help;}
+
+table,tr,td{
+border: 1px solid #000000;
+border-collapse: collapse;
+font-size: 12px;
+}
+
+label{font-size: 90%;}
+
+#out_result,#out_count{width: 100%;}
+
+#out_result{
+height: 3.5em;
+
+background-color: #C9E0F0;
+
+text-align: center;
+line-height: 3.5em;
+
+border: 1px solid #ABCDEF;
+
+border-top-left-radius: 0.5em;
+border-top-right-radius: 0.5em;
+
+
+font-size: 22px;
+}
+
+#out_count{
+height: 3em;
+
+background-color: #0075C8;
+color: #FFFFFF;
+
+text-align: center;
+line-height: 3em;
+
+border: 1px solid #0000FF;
+
+border-bottom-left-radius: 0.5em;
+border-bottom-right-radius: 0.5em;
+
+}
+
+#slotBox{
+
+padding: 1em;
+
+}
+
+
+#expTable, #charExpTable{
+font-family: NanumGothic;
+text-align: center;
+}
+
+
+#author_info{font-size: 90%;}

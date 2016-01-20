@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DnF 모험단 레벨 계산기</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css" href="advlevel.css" />
+<script type="text/javascript" src="dnf_advlevel.js"></script>
+</head>
+<body onload="initCalc();">
+
+<h1>던전앤파이터(DnF) 모험단 레벨 계산기 (ver 0.8.2)</h1>
+
+<div id="how_to">
+아래 입력란마다 자신이 보유하고 있는 캐릭터들의 <b>레벨</b>(86 이하)을 각각 입력해주세요.<br />
+각 줄당 입력란 수는 입력 편의를 위해 게임 내 캐릭터 선택 화면(각 줄당 캐릭터 4개)을 기준으로 했습니다.
+</div>
+
+<h2>결과</h2>
+<div id="out_result">
+</div>
+<div id="out_count">
+</div>
+
+<h2>입력란</h2>
+
+<p id="toggleMode">
+[슬롯 모드]
+<input type="radio" name="mode" id="basicMode" checked="checked" onclick="changeCalcMode();" onchange="changeCalcMode();" /><label for="basicMode" title="기본값. 보유하고 있는 캐릭터수가 25개 이하인 경우 선택합니다.">기본 (~25개)</label>
+<input type="radio" name="mode" id="extendedMode" onclick="changeCalcMode();" onchange="changeCalcMode();" /><label for="extendedMode" title="보유하고 있는 캐릭터수가 25개보다 많은 경우 선택합니다.">확장 (~100개)</label>
+</p>
+
+
+<form method="get" action="javascript:dummyAction();">
+<div id="slotBox">
+</div>
+
+<p id="performAction">
+<input type="button" value="계산" class="generalBtns" onclick="calcAdventureLevel();" />
+<input type="reset" value="입력값 초기화" class="generalBtns" onclick="resetForm();" />
+</p>
+
+</form>
+
+
+<h2>모험단 레벨별 경험치표</h2>
+
+
+<table width="810" id="expTable">
+<tr><td rowspan="2">레벨</td><td rowspan="2">모험단명</td><td rowspan="2">증가 능력치</td><td rowspan="2">경험치 보너스</td><td rowspan="2">필요 경험치</td><td rowspan="2">누적 경험치</td><td colspan="2">레벨컷 캐릭터수</td></tr>
+<tr><td>86레벨 캐릭터 기준</td><td>85레벨 캐릭터 기준</td></tr>
+<tr><td>0</td><td>모험의 시작</td><td>N/A</td><td>+0%</td><td>N/A</td><td>N/A</td><td colspan="2">N/A</td></tr>
+<tr><td>1</td><td>실버크라운 모험단</td><td>10</td><td rowspan="10">+10%</td><td>1375</td><td>1375</td><td colspan="2">50레벨 1개</td></tr>
+<tr><td>2</td><td>멜트다운 모험단</td><td>30</td><td>4050</td><td>5425</td><td colspan="2">70레벨 1개</td></tr>
+<tr><td>3</td><td>표류동굴 모험단</td><td>50</td><td>5425</td><td>10850</td><td>86레벨 1개 + 40레벨 1개</td><td>85레벨 1개 + 44레벨 1개</td></tr>
+<tr><td>4</td><td>역천의 폭포 모험단</td><td>70</td><td>10850</td><td>21700</td><td>86레벨 2개 + 41레벨 1개</td><td>85레벨 2개 + 48레벨 1개</td></tr>
+<tr><td>5</td><td>체념의 빙벽 모험단</td><td>90</td><td>16275</td><td>37975</td><td>86레벨 3개 + 71레벨 1개</td><td>85레벨 3개 + 76레벨 1개</td></tr>
+<tr><td>6</td><td>안트베르 협곡 모험단</td><td>110</td><td>16275</td><td>54250</td><td>86레벨 5개 + 43레벨 1개</td><td>85레벨 5개 + 56레벨 1개</td></tr>
+<tr><td>7</td><td>해상열차 모험단</td><td>125</td><td>21700</td><td>75950</td><td>86레벨 7개 + 44레벨 1개</td><td>85레벨 7개 + 61레벨 1개</td></tr>
+<tr><td>8</td><td>시간의 문 모험단</td><td>140</td><td>25625</td><td>101575</td><td>86레벨 9개 + 67레벨 1개</td><td>85레벨 9개 + 80레벨 1개</td></tr>
+<tr><td>9</td><td>파워스테이션 모험단</td><td>155</td><td>32150</td><td>133725</td><td>86레벨 12개 + 66레벨 1개</td><td>85레벨 12개 + 83레벨 1개</td></tr>
+<tr><td>10</td><td>노블스카이 모험단</td><td>170</td><td>41625</td><td>175350</td><td>86레벨 16개 + 59레벨 1개</td><td>85레벨 16개 + 83레벨 1개</td></tr>
+</table>
+
+<h3>캐릭터 레벨별 모험단 경험치표</h3>
+
+<table width="500" id="charExpTable">
+<tr><td>캐릭터 레벨</td><td>레벨당 경험치</td><td>누적 경험치</td><td>캐릭터 레벨</td><td>레벨당 경험치</td><td>누적 경험치</td></tr>
+<tr><td>40</td><td>100</td><td>100</td><td>71</td><td>260</td><td>5685</td></tr>
+<tr><td>41</td><td>105</td><td>205</td><td>72</td><td>270</td><td>5955</td></tr>
+<tr><td>42</td><td>110</td><td>315</td><td>73</td><td>280</td><td>6235</td></tr>
+<tr><td>43</td><td>115</td><td>430</td><td>74</td><td>290</td><td>6525</td></tr>
+<tr><td>44</td><td>120</td><td>550</td><td>75</td><td>300</td><td>6825</td></tr>
+<tr><td>45</td><td>125</td><td>675</td><td>76</td><td>310</td><td>7135</td></tr>
+<tr><td>46</td><td>130</td><td>805</td><td>77</td><td>320</td><td>7455</td></tr>
+<tr><td>47</td><td>135</td><td>940</td><td>78</td><td>330</td><td>7785</td></tr>
+<tr><td>48</td><td>140</td><td>1080</td><td>79</td><td>340</td><td>8125</td></tr>
+<tr><td>49</td><td>145</td><td>1225</td><td>80</td><td>350</td><td>8475</td></tr>
+<tr><td>50</td><td>150</td><td>1375</td><td>81</td><td>360</td><td>8835</td></tr>
+<tr><td>51</td><td>155</td><td>1530</td><td>82</td><td>370</td><td>9205</td></tr>
+<tr><td>52</td><td>160</td><td>1690</td><td>83</td><td>380</td><td>9585</td></tr>
+<tr><td>53</td><td>165</td><td>1855</td><td>84</td><td>390</td><td>9975</td></tr>
+<tr><td>54</td><td>170</td><td>2025</td><td>85</td><td>400</td><td>10375</td></tr>
+<tr><td>55</td><td>175</td><td>2200</td><td>86</td><td>410</td><td>10785</td></tr>
+<tr><td>56</td><td>180</td><td>2380</td><td rowspan="15" colspan="3"></td></tr>
+<tr><td>57</td><td>185</td><td>2565</td></tr>
+<tr><td>58</td><td>190</td><td>2755</td></tr>
+<tr><td>59</td><td>195</td><td>2950</td></tr>
+<tr><td>60</td><td>200</td><td>3150</td></tr>
+<tr><td>61</td><td>205</td><td>3355</td></tr>
+<tr><td>62</td><td>210</td><td>3565</td></tr>
+<tr><td>63</td><td>215</td><td>3780</td></tr>
+<tr><td>64</td><td>220</td><td>4000</td></tr>
+<tr><td>65</td><td>225</td><td>4225</td></tr>
+<tr><td>66</td><td>230</td><td>4455</td></tr>
+<tr><td>67</td><td>235</td><td>4690</td></tr>
+<tr><td>68</td><td>240</td><td>4930</td></tr>
+<tr><td>69</td><td>245</td><td>5175</td></tr>
+<tr><td>70</td><td>250</td><td>5425</td></tr>
+</table>
+
+<h3>모험단 경험치 계산공식</h3>
+
+<ul>
+<li>40레벨 이상 70레벨 이하 : 레벨당 100+{5*(L-40)} (L:레벨) 경험치 획득</li>
+<li>71레벨 이상 86레벨 이하 : 레벨당 250+{10*(L-70)} (L:레벨) 경험치 획득</li>
+</ul>
+
+
+<h2>제작자 정보</h2>
+
+<p id="author_info">
+제작 : Senarin/세나린 (카시야스 서버, 네이버 : <a href="http://themunyang21.blog.me">themunyang21</a>, 트위터 : <a href="https://twitter.com/Rb_Senarin">@Rb_Senarin</a>)<br />
+주 : 이 프로그램은 네오플 및 넥슨, 네이버와 <b>직접적 연관이 없습니다.</b> &quot;던전앤파이터&quot;, &quot;Dungeon &amp; Fighter&quot;는 대한민국에서 넥슨 및 네오플의 등록상표입니다.
+</div>
+
+
+</body>
+</html>
