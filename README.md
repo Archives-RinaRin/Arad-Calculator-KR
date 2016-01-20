@@ -8,7 +8,7 @@ HTML 기반으로 만들어진 것이라 엑셀이 없어도 크롬 같은 최�
 - http://blog.naver.com/akahdy/220512591867
 - https://namu.wiki/w/%EC%95%84%EB%9D%BC%EB%93%9C%20%EB%AA%A8%ED%97%98%EB%8B%A8
 
-위의 'Download ZIP' 파일을 눌러 파일을 다운로드 받으세요.
+위의 'Download ZIP' 버튼을 눌러 파일을 다운로드 받으세요.
 그리고 다운로드받은 파일을 적당한 곳에다 압축을 푼 다음 'Arad' 폴더 아래 있는 HTML 파일을 실행해주세요.
 
 - 다운받기 귀찮으신 분들은 [이 링크](http://senarin.github.io/AradCalc/dnf_advlevel.html)를 누르시면 계산기 페이지로 바로 갈수 있습니다.
