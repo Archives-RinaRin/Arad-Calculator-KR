@@ -59,6 +59,70 @@ function changeCalcMode(){
  }
 }
 
+
+function changeScreenMode(){
+
+ var slotLine=new Array();
+ var slotBox=new Array();
+ var slotType=new Array();
+ var slotMin=new Array();
+ var slotMax=new Array();
+ var slotSize=new Array();
+ var slotData=new Array();
+ var slotNewData=new Array();
+ var lines=0;
+ 
+ for(d=0;d<100;d++){
+  slotData[d]=document.getElementById("charaslot_"+d);
+  if(new Number(slotData[d].value) != 0){
+   slotNewData[d]=slotData[d].value;
+  }
+ }
+ 
+ if(document.getElementById("normalMode").checked == true){
+  var boxPerLine=4;
+  var numOfLine=25;
+ }else if(document.getElementById("wideMode").checked == true){
+  var boxPerLine=6;
+  var numOfLine=17;
+ }
+ 
+ var boxPos=document.getElementById("slotBox");
+ 
+ boxPos.innerHTML="";
+ 
+ for(s=0;s<numOfLine;s++){
+  slotLine[s]=document.createElement("div");
+  slotLine[s].id="slotline_"+s;
+  lines=(s * boxPerLine);
+  for(p=lines;p<lines+boxPerLine;p++){
+   if(p >= 100){break;}
+   slotBox[p]=document.createElement("input");
+   slotBox[p].id="charaslot_"+p;
+   
+   slotType[p]=document.createAttribute("type");
+   slotType[p].value="number";
+  
+   slotMin[p]=document.createAttribute("min");
+   slotMin[p].value="1";
+   slotMax[p]=document.createAttribute("max");
+   slotMax[p].value="86";
+  
+   slotBox[p].setAttributeNode(slotType[p]);
+   slotBox[p].setAttributeNode(slotMin[p]);
+   slotBox[p].setAttributeNode(slotMax[p]);
+   
+   slotLine[s].appendChild(slotBox[p]);
+  }
+  boxPos.appendChild(slotLine[s]);
+ }
+ for(l=0;l<slotNewData.length;l++){document.getElementById("charaslot_"+l).value=slotNewData[l];}
+ changeCalcMode();
+}
+
+
+
+
 function calcAdventureLevel(){
 
  var advExp=0;

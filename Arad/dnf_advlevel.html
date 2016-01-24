@@ -9,11 +9,11 @@
 </head>
 <body onload="initCalc();">
 
-<h1>던전앤파이터(DnF) 모험단 레벨 계산기 (ver 0.8.2)</h1>
+<h1>던전앤파이터(DnF) 모험단 레벨 계산기 (ver 0.9.0)</h1>
 
 <div id="how_to">
 아래 입력란마다 자신이 보유하고 있는 캐릭터들의 <b>레벨</b>(86 이하)을 각각 입력해주세요.<br />
-각 줄당 입력란 수는 입력 편의를 위해 게임 내 캐릭터 선택 화면(각 줄당 캐릭터 4개)을 기준으로 했습니다.
+각 줄당 입력란 수는 입력 편의를 위해 게임 내 캐릭터 선택 화면(각 줄당 캐릭터 4~6개)을 기준으로 했습니다.
 </div>
 
 <h2>결과</h2>
@@ -26,10 +26,15 @@
 
 <p id="toggleMode">
 [슬롯 모드]
-<input type="radio" name="mode" id="basicMode" checked="checked" onclick="changeCalcMode();" onchange="changeCalcMode();" /><label for="basicMode" title="기본값. 보유하고 있는 캐릭터수가 25개 이하인 경우 선택합니다.">기본 (~25개)</label>
-<input type="radio" name="mode" id="extendedMode" onclick="changeCalcMode();" onchange="changeCalcMode();" /><label for="extendedMode" title="보유하고 있는 캐릭터수가 25개보다 많은 경우 선택합니다.">확장 (~100개)</label>
+<input type="radio" name="mode" id="basicMode" checked="checked" onclick="changeCalcMode();" onchange="changeCalcMode();" /><label for="basicMode" title="기본값. 자신이 보유하고 있는 캐릭터수가 25개 이하인 경우 선택합니다.">기본 (~25개)</label>
+<input type="radio" name="mode" id="extendedMode" onclick="changeCalcMode();" onchange="changeCalcMode();" /><label for="extendedMode" title="자신이 보유하고 있는 캐릭터수가 25개보다 많은 경우 선택합니다.">확장 (~100개)</label>
 </p>
 
+<p id="toggleScrMode">
+[화면 모드]
+<input type="radio" name="smode" id="normalMode" checked="checked" onclick="changeScreenMode();" onchange="changeScreenMode();" /><label for="normalMode" title="기본값. 자신이 기본 화면 모드로 게임을 플레이하고 있는 경우 선택합니다.">기본 (줄당 4개)</label>
+<input type="radio" name="smode" id="wideMode" onclick="changeScreenMode();" onchange="changeScreenMode();" /><label for="wideMode" title="자신이 와이드 화면 모드로 게임을 플레이하고 있는 경우 선택합니다.">와이드 (줄당 6개)</label>
+</p>
 
 <form method="get" action="javascript:dummyAction();">
 <div id="slotBox">
