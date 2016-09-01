@@ -144,7 +144,7 @@ function calcAdventureLevel(){
   if(levelData[i].value.length != 0){validCount++;}
   charaLevel[i] = new Number(levelData[i].value);
   if(charaLevel[i] < 40){advExp+=0;}
-  else if(charaLevel[i] >= 40 && charaLevel[i] <= 86){
+  else if(charaLevel[i] >= 40 && charaLevel[i] <= 90){
    if(charaLevel[i] >= 40){advCount++;}
    if(charaLevel[i] >= 50){supporterCount++;}
    if(charaLevel[i] >= 70){mercenaryCount++;}
@@ -153,7 +153,7 @@ function calcAdventureLevel(){
     if(j <= 70){advExp+=100+(5 * (j-40));}
 	else if(j >= 71){advExp+=250+(10 * (j-70));}
    }
-  }else{alert("캐릭터 최대 레벨은 86입니다.");return false;}
+  }else{alert("캐릭터 최대 레벨은 90입니다.");return false;}
  }
 
  if(advExp < 1375){advLevel=0;nextLevelExp=Math.abs(advExp-1375);curLevelExp=(1375-nextLevelExp);curLevelExpPercentage=(100 * (curLevelExp / 1375));}
