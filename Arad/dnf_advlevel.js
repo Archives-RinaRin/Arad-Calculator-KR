@@ -166,7 +166,7 @@ function calcAdventureLevel(){
  else if(advExp >= 75950 && advExp < 101575){advLevel=7;nextLevelExp=Math.abs(advExp-101575);curLevelExp=(25625-nextLevelExp);curLevelExpPercentage=(100 * (curLevelExp / 25625));}
  else if(advExp >= 101575 && advExp < 133725){advLevel=8;nextLevelExp=Math.abs(advExp-133725);curLevelExp=(32150-nextLevelExp);curLevelExpPercentage=(100 * (curLevelExp / 32150));}
  else if(advExp >= 133725 && advExp < 175350){advLevel=9;nextLevelExp=Math.abs(advExp-175350);curLevelExp=(41625-nextLevelExp);curLevelExpPercentage=(100 * (curLevelExp / 41625));}
- else if(advExp >= 175350 && advExp < 237975){advLevel=9;nextLevelExp=Math.abs(advExp-237975);curLevelExp=(62625-nextLevelExp);curLevelExpPercentage=(100 * (curLevelExp / 62625));}
+ else if(advExp >= 175350 && advExp < 237975){advLevel=10;nextLevelExp=Math.abs(advExp-237975);curLevelExp=(62625-nextLevelExp);curLevelExpPercentage=(100 * (curLevelExp / 62625));}
  else{advLevel=11;nextLevelExp="(없음)";curLevelExp=0;curLevelExpPercentage=0;}
  
  levelMean=(Math.floor((levelSum / validCount) * 100) / 100);
