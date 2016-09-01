@@ -9,7 +9,7 @@
 </head>
 <body onload="initCalc();">
 
-<h1>던전앤파이터(DnF) 모험단 레벨 계산기 (ver 0.9.2-rc1)</h1>
+<h1>던전앤파이터(DnF) 모험단 레벨 계산기 (ver 0.9.5)</h1>
 
 <div id="how_to">
 아래 입력란마다 자신이 보유하고 있는 캐릭터들의 <b>레벨</b>(86 이하)을 각각 입력해주세요.<br />
@@ -52,19 +52,20 @@
 
 
 <table width="810" id="expTable">
-<tr><td rowspan="2">레벨</td><td rowspan="2">모험단명</td><td rowspan="2">증가 능력치</td><td rowspan="2">경험치 보너스</td><td rowspan="2">필요 경험치</td><td rowspan="2">누적 경험치</td><td colspan="2">레벨컷 캐릭터수</td></tr>
-<tr><td>86레벨 캐릭터 기준</td><td>85레벨 캐릭터 기준</td></tr>
+<tr><td rowspan="2">레벨</td><td rowspan="2">모험단명</td><td rowspan="2">증가 능력치</td><td rowspan="2">경험치 보너스</td><td rowspan="2">필요 경험치</td><td rowspan="2">누적 경험치</td><td colspan="1">레벨컷 캐릭터수</td></tr>
+<tr><td>90레벨 캐릭터 기준</td></tr>
 <tr><td>0</td><td>모험의 시작</td><td>N/A</td><td>+0%</td><td>N/A</td><td>N/A</td><td colspan="2">N/A</td></tr>
-<tr><td>1</td><td>실버크라운 모험단</td><td>10</td><td rowspan="10">+10%</td><td>1375</td><td>1375</td><td colspan="2">50레벨 1개</td></tr>
+<tr><td>1</td><td>실버크라운 모험단</td><td>10</td><td rowspan="11">+10%</td><td>1375</td><td>1375</td><td colspan="2">50레벨 1개</td></tr>
 <tr><td>2</td><td>멜트다운 모험단</td><td>30</td><td>4050</td><td>5425</td><td colspan="2">70레벨 1개</td></tr>
-<tr><td>3</td><td>표류동굴 모험단</td><td>50</td><td>5425</td><td>10850</td><td>86레벨 1개 + 40레벨 1개</td><td>85레벨 1개 + 44레벨 1개</td></tr>
-<tr><td>4</td><td>역천의 폭포 모험단</td><td>70</td><td>10850</td><td>21700</td><td>86레벨 2개 + 41레벨 1개</td><td>85레벨 2개 + 48레벨 1개</td></tr>
-<tr><td>5</td><td>체념의 빙벽 모험단</td><td>90</td><td>16275</td><td>37975</td><td>86레벨 3개 + 71레벨 1개</td><td>85레벨 3개 + 76레벨 1개</td></tr>
-<tr><td>6</td><td>안트베르 협곡 모험단</td><td>110</td><td>16275</td><td>54250</td><td>86레벨 5개 + 43레벨 1개</td><td>85레벨 5개 + 56레벨 1개</td></tr>
-<tr><td>7</td><td>해상열차 모험단</td><td>125</td><td>21700</td><td>75950</td><td>86레벨 7개 + 44레벨 1개</td><td>85레벨 7개 + 61레벨 1개</td></tr>
-<tr><td>8</td><td>시간의 문 모험단</td><td>140</td><td>25625</td><td>101575</td><td>86레벨 9개 + 67레벨 1개</td><td>85레벨 9개 + 80레벨 1개</td></tr>
-<tr><td>9</td><td>파워스테이션 모험단</td><td>155</td><td>32150</td><td>133725</td><td>86레벨 12개 + 66레벨 1개</td><td>85레벨 12개 + 83레벨 1개</td></tr>
-<tr><td>10</td><td>노블스카이 모험단</td><td>170</td><td>41625</td><td>175350</td><td>86레벨 16개 + 59레벨 1개</td><td>85레벨 16개 + 83레벨 1개</td></tr>
+<tr><td>3</td><td>표류동굴 모험단</td><td>50</td><td>5425</td><td>10850</td><td>-</td></tr>
+<tr><td>4</td><td>역천의 폭포 모험단</td><td>70</td><td>10850</td><td>21700</td><td>-</td></tr>
+<tr><td>5</td><td>체념의 빙벽 모험단</td><td>90</td><td>16275</td><td>37975</td><td>-</td></tr>
+<tr><td>6</td><td>안트베르 협곡 모험단</td><td>110</td><td>16275</td><td>54250</td><td>-</td></tr>
+<tr><td>7</td><td>해상열차 모험단</td><td>125</td><td>21700</td><td>75950</td><td>-</td></tr>
+<tr><td>8</td><td>시간의 문 모험단</td><td>140</td><td>25625</td><td>101575</td><td>-</td></tr>
+<tr><td>9</td><td>파워스테이션 모험단</td><td>155</td><td>32150</td><td>133725</td><td>-</td></tr>
+<tr><td>10</td><td>노블스카이 모험단</td><td>170</td><td>41625</td><td>175350</td><td>-</td></tr>
+<tr><td>11</td><td>젤바 모험단</td><td>185</td><td>62625</td><td>175350</td><td>-</td></tr>
 </table>
 
 <h3>캐릭터 레벨별 모험단 경험치표</h3>
@@ -87,11 +88,11 @@
 <tr><td>53</td><td>165</td><td>1855</td><td>84</td><td>390</td><td>9975</td></tr>
 <tr><td>54</td><td>170</td><td>2025</td><td>85</td><td>400</td><td>10375</td></tr>
 <tr><td>55</td><td>175</td><td>2200</td><td>86</td><td>410</td><td>10785</td></tr>
-<tr><td>56</td><td>180</td><td>2380</td><td rowspan="15" colspan="3"></td></tr>
-<tr><td>57</td><td>185</td><td>2565</td></tr>
-<tr><td>58</td><td>190</td><td>2755</td></tr>
-<tr><td>59</td><td>195</td><td>2950</td></tr>
-<tr><td>60</td><td>200</td><td>3150</td></tr>
+<tr><td>56</td><td>180</td><td>2380</td><td>87</td><td>420</td><td>11205</td></tr>
+<tr><td>57</td><td>185</td><td>2565</td><td>88</td><td>430</td><td>11635</td></tr>
+<tr><td>58</td><td>190</td><td>2755</td><td>89</td><td>440</td><td>12075</td></tr>
+<tr><td>59</td><td>195</td><td>2950</td><td>90</td><td>450</td><td>12525</td></tr>
+<tr><td>60</td><td>200</td><td>3150</td><td rowspan="11" colspan="3"></td></tr>
 <tr><td>61</td><td>205</td><td>3355</td></tr>
 <tr><td>62</td><td>210</td><td>3565</td></tr>
 <tr><td>63</td><td>215</td><td>3780</td></tr>
@@ -108,7 +109,7 @@
 
 <ul>
 <li>40레벨 이상 70레벨 이하 : 레벨당 100+{5*(L-40)} (L:레벨) 경험치 획득</li>
-<li>71레벨 이상 86레벨 이하 : 레벨당 250+{10*(L-70)} (L:레벨) 경험치 획득</li>
+<li>71레벨 이상 90레벨 이하 : 레벨당 250+{10*(L-70)} (L:레벨) 경험치 획득</li>
 </ul>
 
 
