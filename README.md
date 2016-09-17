@@ -10,7 +10,7 @@ HTML 기반으로 만들어진 것이라 엑셀이 없어도 크롬 같은 최�
 
 ## 사용법 및 기타 개요
 
-위의 'Download ZIP' 버튼을 눌러 파일을 다운로드 받으세요.
+위의 'Clone or download' > 'Download ZIP' 버튼을 눌러 파일을 다운로드 받으세요.
 그리고 다운로드받은 파일을 적당한 곳에다 압축을 푼 다음 'Arad' 폴더 아래 있는 HTML 파일을 실행해주세요.
 
 - 다운받기 귀찮으신 분들은 [이 링크](http://senarin.github.io/AradCalc/dnf_advlevel.html)를 누르시면 계산기 페이지로 바로 갈수 있습니다.
