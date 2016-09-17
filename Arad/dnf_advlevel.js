@@ -106,7 +106,7 @@ function changeScreenMode(){
    slotMin[p]=document.createAttribute("min");
    slotMin[p].value="1";
    slotMax[p]=document.createAttribute("max");
-   slotMax[p].value="86";
+   slotMax[p].value="90";
   
    slotBox[p].setAttributeNode(slotType[p]);
    slotBox[p].setAttributeNode(slotMin[p]);
